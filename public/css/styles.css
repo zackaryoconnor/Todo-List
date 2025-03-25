@@ -3,3 +3,8 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+.contentView {
+    margin: 64px;
+    background-color: plum;
+}

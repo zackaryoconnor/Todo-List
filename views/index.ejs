@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo's</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 <body>
-    <h1>Todo's</h1>
-</body>
+    <div class="contentView">
 
+        <header>
+            <h1>Todo's</h1>
+            <form action="/" method="POST">
+                <label for="item">Add a Todo item</label>
+                <input type="text" name="item">
+                <button type="submit">Add Item</button>
+            </form>
+        </header>
+
+        <ul>
+            <% todos.forEach(todo => { %>
+                <li>
+                    <a href="/todo/<%= todo._id %>"><%= todo.item %></a>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
 </html>
