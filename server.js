@@ -89,12 +89,12 @@ app.put(`/todo/:todoId`, async (request, response) => {
 //     response.redirect("/");
 // });
 
+
+// Update checkmarks
 app.put("/:todoId", async (request, response) => {
     try {
-        // Determine if the checkbox was checked or unchecked
-        const isComplete = request.body.isComplete === "on"; // "on" means checked
+        const isComplete = request.body.isComplete === "on"; 
 
-        // Update the todo in the database
         await Todo.findByIdAndUpdate(request.params.todoId, { isComplete });
 
         response.redirect("/");
